@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<addon scheme='2.0'>
+<orders>
+<item title="delly_man" description=" my_controller_description"dispatch="delly_man.manage"/>
+</orders>
+
+</addon>

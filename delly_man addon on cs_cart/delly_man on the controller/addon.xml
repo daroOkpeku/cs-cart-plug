@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<addon scheme='2.0'>
+    <id>delly_man</id>
+    <version>1.0</version>
+    <default_language>en</default_language>
+    <name>Dellyman</name>
+    <description>Shipping and Delivery Services in Nigeria</description>
+    <priority>100500</priority>
+    <status>active</status>
+    <queries>
+    <item for="install">DROP TABLE IF EXISTS ?:delly_man;</item>
+    <item for="install">
+      CREATE TABLE `?:delly_man` (
+				`user_id` int(11) unsigned NOT NULL DEFAULT 0,
+				`name` text NOT NULL DEFAULT '',
+				`phone` text NOT NULL DEFAULT '',
+				`address` text NOT NULL DEFAULT '',
+				`product` text NOT NULL DEFAULT '',
+				`price` text NOT NULL DEFAULT '',
+				PRIMARY KEY (`user_id`)
+			) Engine=MyISAM DEFAULT CHARSET UTF8;
+    </item>
+    <item for="install">
+    REPLACE INTO ?:language_values (`lang_code`, `name`, `value`) VALUES ('en', 'delly_man', 'Dellyman');
+    </item>
+    <item for="uninstall">DROP TABLE IF EXISTS ?:delly_man;</item>
+    </queries>
+</addon>
